@@ -12,6 +12,11 @@ app.get('/first-view', function(req, res){
     res.render('first-view');
 });
 
+app.get('/auth/google', function(req, res){
+    res.render('auth-google');
+});
+
+
 app.get('/', function (req, res) {
     console.log("Redirected to /msg");
     res.redirect('/msg');
@@ -25,6 +30,12 @@ app.get('/msg', function (req, res) {
 app.get('/store', function (req, res) {
     res.send('Witaj w aplikacji sklep');
 });
+
+app.get('/auth/login', function(req,res) {
+		res.render('login',  {
+			user: "lukaszsd"
+		});
+	})
 
 app.listen(3000, function() {
     console.log("Aplikacja store nasluchuje na http://localhost:3000");

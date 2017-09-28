@@ -1,0 +1,11 @@
+html
+    head
+        title Google Auth
+    style
+        include login.css
+    body
+        if(user=="lukasz")
+            h1 Hi, #{user}
+            a(href="/store") Got to store
+        else
+            a(href="/auth/google") Not recognized, try again
